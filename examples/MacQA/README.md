@@ -6,21 +6,10 @@ We share the details of how to run first and then an outline of how it works:
 
 ### Prerequisite:
 
-Install docker: Check [this doc for Mac](https://docs.docker.com/desktop/setup/install/mac-install/), [this doc for Windows](https://docs.docker.com/desktop/setup/install/windows-install/) and this [instruction for Linux](https://docs.docker.com/engine/install/).
+**Install ollama**: This app use ollama to run inference, please follow [ollama's download instruction](https://ollama.com/download) to install Ollama.
 
-For Mac and Windows users, you need to start the Docker app manually after installation.
+**Install pypi packages**: Run `pip install -r requirements.txt` to install other pypi packages. Restart terminal to make chromadb affective, according to [this issue](https://github.com/langchain-ai/langchain/issues/1387#issuecomment-1614233339)
 
 ### How to run the pipeline:
 
-![RAG_workflow](./data/assets/DocQA.png)
-
-The above is the workflow diagram for this RAG app. To run the app, please read the following instructions:
-
-1.
-
-```bash
-pip install chromadb
-chroma run --host localhost --port 6000 --path ./example_data &
-ollama run llama3.2:1b-instruct-fp16 --keepalive=24h &
-python app.py
-```
+Run `./dist/MacQA.app/Contents/MacOS/MacQA`
